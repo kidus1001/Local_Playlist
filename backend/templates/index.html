@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Playlist Downloader | KidusApp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube Icon" class="logo-icon">
+            <h1>YouTube Audio Downloader</h1>
+        </header>
+
+        <section class="download-area">
+            <h2>Download a Playlist</h2>
+            
+            <div class="input-group">
+                <input type="text" id="playlistUrl" placeholder="Paste YouTube Playlist URL here..." required>
+                <button onclick="startDownload()">
+                    <span class="icon">⬇️</span> Start Download
+                </button>
+            </div>
+
+            <div id="statusMessage" class="status-box">
+                Ready to download. Paste your playlist link above.
+            </div>
+            
+            <div id="progressBarContainer" class="progress-bar-container" style="display:none;">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            &copy; 2025 | @SoftwareAspirer | @KidusYosef1001.
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 

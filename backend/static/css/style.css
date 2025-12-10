@@ -1,0 +1,173 @@
+/* General Reset and Font */
+:root {
+    --bg-color: #1a1a2e; /* Dark background */
+    --card-color: #2c2c44; /* Slightly lighter container */
+    --primary-color: #e94560; /* Accent/Button color */
+    --text-color: #ffffff; /* Light text */
+    --input-bg: #404058; /* Input field background */
+    --success-color: #4CAF50;
+    --error-color: #F44336;
+    --warn-color: #FFC107;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container and Header */
+.container {
+    background-color: var(--card-color);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 650px;
+    padding: 40px;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-left: 10px;
+    color: var(--primary-color);
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+}
+
+/* Input and Button Group */
+.download-area h2 {
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#playlistUrl {
+    flex-grow: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+#playlistUrl::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#playlistUrl:focus {
+    outline: 2px solid var(--primary-color);
+    background-color: var(--input-bg);
+}
+
+button {
+    padding: 15px 25px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button:hover:not(:disabled) {
+    background-color: #ff6e81; /* Lighter primary color */
+    transform: translateY(-1px);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background-color: #55556b;
+    cursor: not-allowed;
+}
+
+/* Status Box */
+.status-box {
+    min-height: 80px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    background-color: var(--input-bg);
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    white-space: pre-wrap; /* Preserve formatting for logs */
+}
+
+/* Status Colors */
+.status-success {
+    border-left: 5px solid var(--success-color);
+    color: var(--success-color);
+}
+
+.status-error {
+    border-left: 5px solid var(--error-color);
+    color: var(--error-color);
+}
+
+.status-pending {
+    border-left: 5px solid var(--warn-color);
+    color: var(--warn-color);
+}
+
+/* Progress Bar (For future real-time update implementation) */
+.progress-bar-container {
+    height: 10px;
+    background-color: #55556b;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--primary-color);
+    transition: width 0.4s ease-in-out;
+}
+
+/* Footer */
+.footer {
+    padding-top: 20px;
+    border-top: 1px solid #404058;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+}
